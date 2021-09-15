@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Sort">
+        <item>"Title"</item>
+        <item>"Author"</item>
+        <item>"Genre"</item>
+    </string-array>
+    <string-array name="database">
+        <item>"Room"</item>
+        <item>"SQLite"</item>
+    </string-array>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="24sp">
+    <Preference
+
+        />
+
+    <ListPreference
+        android:defaultValue="Title"
+        android:entries="@array/Sort"
+        android:entryValues="@array/Sort"
+        android:key="list"
+        android:title="Sort by"
+        app:useSimpleSummaryProvider="true"
+        />
+
+    <ListPreference
+        android:defaultValue="Room"
+        android:entries="@array/database"
+        android:entryValues="@array/database"
+        android:key="database"
+        android:title="Database implementation"
+        app:useSimpleSummaryProvider="true"/>
+
+
+
+
+</PreferenceScreen>

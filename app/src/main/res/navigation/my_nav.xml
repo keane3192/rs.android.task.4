@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.bookdb.fragments.list.ListFragment"
+        android:label="Book List - Room"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_listSqlFragment"
+            app:destination="@id/listSqlFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.bookdb.fragments.add.AddFragment"
+        android:label="Book Add - Room"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.bookdb.fragments.update.UpdateFragment"
+        android:label="Book Update - Room"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.example.bookdb.model.Book" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSqlFragment"
+        android:name="com.example.bookdb.sql.AddSqlFragment"
+        android:label="Book Add - SQLite"
+        tools:layout="@layout/fragment_add_sql" >
+        <action
+            android:id="@+id/action_addSqlFragment_to_listSqlFragment"
+            app:destination="@id/listSqlFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listSqlFragment"
+        android:name="com.example.bookdb.sql.ListSqlFragment"
+        android:label="Book List - SQLite"
+        tools:layout="@layout/fragment_list_sql" >
+        <action
+            android:id="@+id/action_listSqlFragment_to_addSqlFragment"
+            app:destination="@id/addSqlFragment" />
+        <action
+            android:id="@+id/action_listSqlFragment_to_updateSqlFragment"
+            app:destination="@id/updateSqlFragment" />
+        <action
+            android:id="@+id/action_listSqlFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateSqlFragment"
+        android:name="com.example.bookdb.sql.UpdateSqlFragment"
+        android:label="Book Update - SQLite"
+        tools:layout="@layout/fragment_update_sql" >
+        <action
+            android:id="@+id/action_updateSqlFragment_to_listSqlFragment"
+            app:destination="@id/listSqlFragment" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.example.bookdb.sql.BookModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.bookdb.settings.SettingsFragment"
+        android:label="Settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_listSqlFragment"
+            app:destination="@id/listSqlFragment" />
+    </fragment>
+</navigation>
